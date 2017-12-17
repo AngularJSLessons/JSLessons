@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP - Prototype, Constructor, Encapsulation</title>
+</head>
+<body>
+<h1>OOP - Prototype (alternative class), Constructor, Encapsulation</h1>
+<h3>! - Каждая функция имеет свойство prototype, представляющее прототип функции. То есть свойство User.prototype представляет прототип объектов User. И любые свойства и методы, которые будут определены в User.prototype, будут общими для всех объектов User.</h3>
+<h4><code>User.prototype.age = 4; // all User objects have age property with 4 value.</code></h4>
+<h2>Constructor - function</h2>
+<h4 style="color: green">Example</h4>
+<h4>
+    <code>
+        <pre>
+function User(pName, pAge) {
+    this.name = pName;
+    this.age = pAge;
+    this.displayInfo = function(){
+        document.write("Имя: " + this.name + "; возраст: " + this.age);
+    };
+};
+var tom = new User("Том", 26);
+tom.name=34;
+console.log(tom.name);
+        </pre>
+    </code>
+</h4>
+<h2>Encapsulation</h2>
+<h4 style="color: green">Example</h4>
+<h4>
+    <code>
+        <pre>
+function User(pName, pAge) {
+    var _name = pName; <span style="color: blue">// private in JS</span>
+    this.age = pAge;
+    this.getName = function(){
+        return _name;
+    }
+    this.displayInfo = function(){
+        document.write("Имя: " + this.name + "; возраст: " + this.age);
+    };
+};
+var tom = new User("Том", 26);
+console.log(tom._name); <span style="color: red">//undefined</span>
+console.log(tom.getName); <span style="color: green">//Tom</span>
+        </pre>
+    </code>
+</h4>
+<h2>Inheritance</h2>
+<code>
+    <pre>
+<span style="color: green">// base function constructor</span>
+function User (name, age) {
+    this.name = name;
+    this.age = age;
+    this.go = function(){document.write(this.name + " идет <br/>");}
+    this.displayInfo = function(){
+        document.write("Имя: " + this.name + "; возраст: " + this.age + "<br/>");
+    };
+}
+User.prototype.maxage = 110;
+
+<span style="color: green">// child class constructor</span>
+function Employee(name, age, comp){
+    User.call(this, name, age); <span style="color: green">// call base function constructor</span>
+    this.company = comp;
+    this.displayInfo = function(){
+        document.write("Имя: " + this.name + "; возраст: " + this.age + "; компания: " + this.company + "<br/>");
+    };
+}
+Employee.prototype = Object.create(User.prototype); <span style="color: green">// Employee extends user</span>
+    </pre>
+</code>
+</body>
+</html>

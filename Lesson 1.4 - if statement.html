@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If statement and for .. in loop</title>
+</head>
+<body>
+<script>
+    document.write("<h1>If statement and for .. in loop</h1>");
+    document.write('<h2>Values in if statement</h2>');
+    document.write("<h4>Check var has value or not (undefined)  - >  if(myVar){ }</h4>");
+    document.write('<h4>Check var value undefined or not  - >  if(typeof myVar != "undefined"){ }</h4>');
+    document.write('<h4>undefined -> false</h4>');
+    document.write('<h4>null -> false</h4>');
+    document.write('<h4>Number -> return "false" if value is "0" or "NaN" else return true</h4>');
+    document.write('<h4>String -> return "false" if string length is 0 else return true</h4>');
+    document.write('<h4>Object -> always returns true</h4>');
+    document.write('<h4 style="color: blue">Object Example: {name:"Tom"} or new Boolean(false) or {} --->  return True</h4>');
+
+    document.write('<h2>For .. in loop</h2>');
+    document.write('<h4>for(var index in myArray) { }</h4>');
+
+    var people = ["Tom", "Alice", "Bob", "Sam"];
+    for(var index in people){
+        console.log(people[index] + "</br>");
+    }
+</script>
+</body>
+</html>

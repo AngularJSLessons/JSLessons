@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+</head>
+<body>
+<script>
+    document.write('<h1>Functions</h1>');
+    document.write('<h2>Function - base function in js</h2>');
+    document.write('<h4>В JavaScript функция тоже является объектом - объектом "Function" и тоже имеет прототип, свойства, методы. Все функции, которые используются в программе, являются объектами "Function" и имеют все его свойства и методы.</h4>');
+    document.write("<h4><code>var square = new Function('n', 'return n * n;'); console.log(square(5));</code></h4>");
+</script>
+<h3>Среди свойств объекта Function можно выделить следующие:</h3>
+<ul>
+    <li><p><span class="bb">arguments</span>: массив аргументов, передаваемых в функцию</p></li>
+    <li><p><span class="bb">length</span>: определяет количество аргументов, которые ожидает функция</p></li>
+    <li><p><span class="bb">caller</span>: определяет функцию, вызвавшую текущую выполняющуюся функцию</p></li>
+    <li><p><span class="bb">name</span>: имя функции</p></li>
+    <li><p><span class="bb">prototype</span>: прототип функции</p></li>
+    <li><p><span class="bb">call()</span>: вызывает функцию с указанным значением this и аргументами</p></li>
+    <li><p><span class="bb">apply()</span>: вызывает функцию и в качестве первого параметра также получает объект, для которого функция вызывается. Только теперь в качестве второго параметра передается массив аргументов</p></li>
+</ul>
+<h4 style="color: blue">call() Example</h4>
+<code>
+    <pre>
+function User (name, age) {
+    this.name = name;
+    this.age = age;
+}
+var tom = new User("Том", 26);
+function display(){
+    console.log("Ваше имя: " + this.name);
+}
+display.call(tom); // Ваше имя: Том
+    </pre>
+</code>
+<h4 style="color: blue">apply() Example</h4>
+<code>
+    <pre>
+function add(x, y){
+
+    return x + y;
+}
+var result = add.apply(null, [3, 8]);
+
+console.log(result); // 11
+    </pre>
+</code>
+<h2>Замыкание</h2>
+    <h4>"Замыкания представляют собой ссылку на локальную переменную, которая была создана в области видимости одной функции, но при этом сохраняет свое значение и используется в другой части программы."</h4>
+<div class="container">
+    <div class="line number1 index0 alt2">
+        <code class="js keyword">function</code>
+        <code class="js plain">multiply(n){</code>
+    </div>
+    <div class="line number2 index1 alt1">
+        <code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+        <code class="js keyword">var</code>
+        <code class="js plain">x = n;</code>
+    </div>
+    <div class="line number3 index2 alt2">
+        <code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+        <code class="js keyword">return</code>
+        <code class="js keyword">function</code>
+        <code class="js plain">(m){ </code>
+        <code class="js keyword">return</code>
+        <code class="js plain">x * m;};</code>
+    </div>
+    <div class="line number4 index3 alt1">
+        <code class="js plain">}</code>
+    </div>
+    <div class="line number5 index4 alt2">
+        <code class="js keyword">var</code>
+        <code class="js plain">fn1 = multiply(5);</code>
+    </div>
+    <div class="line number6 index5 alt1">
+        <code class="js keyword">var</code>
+        <code class="js plain">result1 = fn1(6); </code>
+        <code class="js comments">// 30</code>
+    </div>
+    <div class="line number7 index6 alt2">
+        <code class="js plain">console.log(result1); </code>
+        <code class="js comments">// 30</code>
+    </div>
+    <div class="line number8 index7 alt1">&nbsp;
+    </div>
+    <div class="line number9 index8 alt2">
+        <code class="js keyword">var</code>
+        <code class="js plain">fn2= multiply(4);</code>
+    </div>
+    <div class="line number10 index9 alt1">
+        <code class="js keyword">var</code>
+        <code class="js plain">result2 = fn2(6); </code>
+        <code class="js comments">// 24</code>
+    </div>
+    <div class="line number11 index10 alt2">
+        <code class="js plain">console.log(result2); </code>
+        <code class="js comments">// 24</code>
+    </div>
+    <div class="line number8 index7 alt1">&nbsp;
+    </div>
+    <div class="line number5 index4 alt2">
+        <code class="js keyword">var</code>
+        <code class="js plain">result = multiply(5)(6); </code>
+        <code class="js comments">// 30</code>
+    </div>
+    <div class="line number6 index5 alt1">
+        <code class="js plain">console.log(result);</code>
+    </div>
+    <div class="line number8 index7 alt1">&nbsp;
+    </div>
+    <div class="line number8 index7 alt1">&nbsp;
+    </div>
+</div>
+<script>
+    document.write('<h2>Самовызывающиеся функции</h2>');
+</script>
+<div class="line number1 index0 alt2">
+    <code class="js plain">(</code>
+    <code class="js keyword">function</code>
+    <code class="js plain">(){</code>
+</div>
+<div class="line number2 index1 alt1">
+    <code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+    <code class="js plain">console.log(</code>
+    <code class="js string">"Привет мир"</code>
+    <code class="js plain">);</code>
+</div>
+<div class="line number3 index2 alt2">
+    <code class="js plain">}());</code>
+</div>
+<div class="line number8 index7 alt1">&nbsp;
+</div>
+<h2>
+    Переопределение функций
+</h2>
+<div class="container">
+    <div class="line number1 index0 alt2">
+        <code class="js keyword">function</code>
+        <code class="js plain">display(){</code>
+    </div>
+    <div class="line number2 index1 alt1">
+        <code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+        <code class="js plain">console.log(</code>
+        <code class="js string">"Доброе утро"</code>
+        <code class="js plain">);</code>
+    </div>
+    <div class="line number3 index2 alt2">
+        <code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+        <code class="js plain">display = </code>
+        <code class="js keyword">function</code>
+        <code class="js plain">(){</code>
+    </div>
+    <div class="line number4 index3 alt1">
+        <code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+        <code class="js plain">console.log(</code>
+        <code class="js string">"Добрый день"</code>
+        <code class="js plain">);</code>
+    </div>
+    <div class="line number5 index4 alt2">
+        <code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+        <code class="js plain">}</code>
+    </div>
+    <div class="line number6 index5 alt1">
+        <code class="js plain">}</code>
+    </div>
+    <div class="line number7 index6 alt2">&nbsp;</div>
+    <div class="line number8 index7 alt1">
+        <code class="js plain">var displayMessage = display(); </code>
+        <code class="js comments">// Доброе утро</code>
+    </div>
+    <div class="line number9 index8 alt2">
+        <code class="js plain">display(); </code>
+        <code class="js comments">// Добрый день</code>
+    </div>
+    <div class="line number11 index10 alt2">
+        <code class="js plain">displayMessage(); </code>
+        <code class="js comments">// Доброе утро</code>
+    </div>
+    <div class="line number12 index11 alt1">
+        <code class="js plain">displayMessage(); </code>
+        <code class="js comments">// Доброе утро</code>
+    </div>
+    <h4>"При первом срабатывании функции действует основной блок операторов функции, в частности, в данном случае выводится сообщение "Доброе утро". И при первом срабатывании функции display также происходит ее переопределение. Поэтому при всех последующих вызовах функции срабатывает ее переопределенная версия, а на консоль будет выводиться сообщение "Добрый день"."</h4>
+    <h3 style="color: green">! - Компиляция кода происходит в два прохода. При первом проходе компилятор получает все объявления переменных, все идентификаторы. При этом никакой код не выполняется, методы не вызываются. При втором проходе собственно происходит выполнение.
+        Hoisting - поднятие кода с определением переменных и функций вверх до их непосредственного использования. Переменные, которые попадают под hoisting, получают значение undefined.</h3>
+</div>
+</body>
+</html>

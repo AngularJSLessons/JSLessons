@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standard Objects - DateTime</title>
+</head>
+<body>
+<h1>Standard Objects - DateTime</h1>
+<h3>DateTime constructors</h3>
+<p><code>var currentDate = new Date(); // return current Date</code></p>
+<p><code>var myDate = new Date(1359270000000); // DateTime in milliseconds</code></p>
+<p><code>var myDate = new Date("27 March 2008"); // DateTime parse from string</code></p>
+<p><code>var myDate = new Date(2012,11,25,18,30,20,10); // take DateTime Year, month, day, ...</code></p>
+<h3>DateTime functions</h3>
+<ul>
+    <li><p><span style="font-weight: bold">getDate()</span>: возвращает день месяца</p></li>
+    <li><p><span style="font-weight: bold">getDay()</span>: возвращает день недели (отсчет начинается с 0 - воскресенье, и последний день - 6 - суббота)</p></li>
+    <li><p><span style="font-weight: bold">getMonth()</span>: возвращает номер месяца (отсчет начинается с нуля, то есть месяц с номер 0 - январь)</p></li>
+    <li><p><span style="font-weight: bold">getFullYear()</span>: возвращает год</p></li>
+    <li><p><span style="font-weight: bold">toDateString()</span>: возвращает полную дату в виде строки</p></li>
+    <li><p><span style="font-weight: bold">getHours()</span>: возвращает час (от 0 до 23)</p></li>
+    <li><p><span style="font-weight: bold">getMinutes()</span>: возвращает минуты (от 0 до 59)</p></li>
+    <li><p><span style="font-weight: bold">getSeconds()</span>: возвращает секунды (от 0 до 59)</p></li>
+    <li><p><span style="font-weight: bold">getMilliseconds()</span>: возвращает миллисекунды (от 0 до 999)</p></li>
+    <li><p><span style="font-weight: bold">toTimeString()</span>: возвращает полное время в виде строки</p></li>
+</ul>
+<ul>
+    <li><p><span style="font-weight: bold">setDate()</span>: установка дня в дате</p></li>
+    <li><p><span style="font-weight: bold">setMonth()</span>: уставовка месяца (отсчет начинается с нуля, то есть месяц с номер 0 - январь)</p></li>
+    <li><p><span style="font-weight: bold">setFullYear()</span>: устанавливает год</p></li>
+    <li><p><span style="font-weight: bold">setHours()</span>: установка часа</p></li>
+    <li><p><span style="font-weight: bold">setMinutes()</span>: установка минут</p></li>
+    <li><p><span style="font-weight: bold">setSeconds()</span>: установка секунд</p></li>
+    <li><p><span style="font-weight: bold">setMilliseconds()</span>: установка миллисекунд</p></li>
+</ul>
+</body>
+</html>

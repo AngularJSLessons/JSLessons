@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP - this Keyword</title>
+</head>
+<body>
+<h1>OOP - "this" Keyword</h1>
+<h2>Context function</h2>
+<h3>Not in strict mode</h3>
+<code>
+    <pre>
+    function foo(){
+    var bar = "bar2";
+    console.log(this.bar);
+    }
+
+    var bar = "bar1";
+
+    foo();  // bar1
+    </pre>
+</code>
+<h3>In strict mode</h3>
+<code>
+    <pre>
+    "use strict";
+    function foo(){
+    var bar = "bar2";
+    console.log(this.bar);
+    }
+
+    var bar = "bar1";
+
+    foo();  // ошибка - this - undefined
+    </pre>
+</code>
+<h3 style="color: green">! - Если скрипт запускается в строгом режиме (директива "use strict"), то this ссылается непосредственно на контекст функции. Иначе this ссылается на внешний контекст</h3>
+<h2>Hard example</h2>
+<code>
+    <pre>
+        function foo(){
+    var bar = "bar2";
+    console.log(this.bar);
+}
+
+var o3 = {bar:"bar3", foo: foo};
+var o4 = {bar:"bar4", foo: foo};
+
+var bar = "bar1";
+
+foo();  // bar1
+o3.foo();   // bar3
+o4.foo();   // bar4
+    </pre>
+</code>
+<h2>Explicit binding</h2>
+<code>
+    <pre>
+        function foo(){
+    console.log(this.bar);
+}
+
+var o3 = {bar: "bar3"}
+var bar = "bar1";
+foo();  // bar1
+foo.apply(o3);  // bar3
+// или
+// foo.call(o3);
+    </pre>
+</code>
+<h2>bind - function</h2>
+<code>
+    <pre>
+function foo(){
+    console.log(this.bar);
+}
+
+var o3 = {bar: "bar3"}
+var bar = "bar1";
+foo();  // bar1
+var func = foo.bind(o3);
+func(); // bar3
+    </pre>
+</code>
+</body>
+</html>

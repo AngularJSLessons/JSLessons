@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP - Objects</title>
+</head>
+<body>
+<H1>OOP - Objects</H1>
+<h2>Delete object's property</h2>
+<h3><a href="https://metanit.com/web/javascript/4.1.php">Object init syntax url</a></h3>
+<h4>delete object property syntax --> "delete user.name;"</h4>
+<h2>Check object has a property or method - "in" keyword</h2>
+<code>var hasWeightProp = "weight" in user; // false - в user нет свойства или метода под названием weight</code>
+<h4>Or</h4>
+<code>var hasWeightProp = user.weight !== undefined; // false - в user нет свойства или метода под названием weight</code>
+<h4>Or</h4>
+<code>var hasWeightProp = user.hasOwnProperty('weight'); // false - в user нет свойства или метода под названием weight</code>
+<h2>Print object's properties and methods</h2>
+<code>for(var key in user) {
+    console.log(key + " : " + user[key]);
+    }</code>
+<h3 style="color: blue">Create object Example</h3>
+<code><pre>function createUser(pName, pAge) {
+    return {
+        name: pName,
+        age: pAge,
+        displayInfo: function() {
+        document.write("Имя: " + this.name + " возраст: " + this.age);
+        }
+    };
+};
+var tom = createUser("Tom", 26);
+tom.displayInfo();
+var alice = createUser("Alice", 24);
+alice.displayInfo();</pre></code>
+</body>
+</html>

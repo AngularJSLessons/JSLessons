@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+<script>
+    document.write("<h1>Arrays</h1>");
+    document.write("<h4>var myArray = new Array();</h4>");
+    document.write("<h4>var myArray = [];</h4>");
+    document.write('<h4>var myArray = ["Tom", "Sam"];</h4>');
+    document.write('<h4>myArray[0] -> "Tom"</h4>');
+    document.write('<h4>myArray[7] -> undefined</h4>');
+    document.write('<h4>var my2Array = [["Tom", 25, "Sam"],["Tom", 47, "Sam"]];</h4>');
+    document.write('<h4>my2Array[0][1] -> 25</h4>');
+</script>
+<h3>Array functions</h3>
+<ul>
+    <li>myArray.length // Array length</li><br>
+    <li>myArray.push(item1, item2, ...) // add element to array</li><br>
+    <li>myArray.pop() // remove last element from array</li><br>
+    <li>myArray.shift() // get and remove Array first element</li><br>
+    <li>myArray.unshift(item) // add element in the start of Array</li><br>
+    <li>myArray.splice(index, [count], [replaceItem1], [replaceItem2], ... ) // remove current "index" element from array. You can tak count starts from index and new element for replacing removable elements.</li><br>
+    <li>myArray.concat(newArray) // returns two arrays concatenation</li><br>
+    <li>myArray.slice(index, count) // copying and return part of array and return it</li><br>
+    <li>myArray.join(summer) // returns array in one string joined using "summer" string</li><br>
+    <li>myArray.sort() // sorting array</li><br>
+    <li>myArray.reverse() // reversing array</li><br>
+    <li>myArray.indexOf(item) // returns first index of item</li><br>
+    <li>myArray.lastIndexOf(item) // returns last index of item</li><br>
+    <li>myArray.every(conditionFunction) // C# Linq All() method needs take argument condition Function</li><br>
+<p style="color: green">Example</p>
+    <code>
+        <pre>
+var numbers = [ 1, -12, 8, -4, 25, 42 ];
+function condition(value, index, array) {
+    var result = false;
+    if (value > 0) {
+        result = true;
+    }
+    return result;
+};
+var passed = numbers.every(condition);
+document.write(passed); // false
+        </pre>
+    </code><br>
+    <li>myArray.some(conditionFunction) // C# Linq Any() method needs take argument condition Function</li>
+    <li>myArray.filter(conditionFunction) // C# Linq Where() method needs take argument condition Function</li>
+    <li>myArray.forEach(someFunction) // C# Linq Foreach() method needs take argument some Function</li>
+    <li>myArray.map(someFunction) // this function as same as foreach function this function returns new array, but foreach not</li>
+</ul>
+</body>
+</html>
