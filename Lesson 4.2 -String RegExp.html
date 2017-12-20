@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>String RegExp</title>
 </head>
 <body>
-
+<h1>String RegExp</h1>
+<H2>Declare Regexp</H2>
+<code>var myExp = /hello/;</code><br>
+<code>var myExp = new RegExp("hello");</code>
+<h2>RegExp functions</h2>
+<ul>
+    <li><code>myExp.test(simpleText); // return true if text valid for RegExp</code></li>
+    <li><code>myExp.exec(simpleText); // возвращает ту часть строки, которая соответствует выражению. Если соответствий нет, то возвращается значение null</code></li>
+</ul>
+<h2>RegExp special symbols</h2>
+<ul>
+    <li>[abc] - что строка должна иметь одну из трех букв.</li>
+    <li>[a-h] - строка должна содержать хотя бы один символ из диапазона.</li>
+    <li>[^a-h] [^abc] - ^ - строка имела только определенные символы</li>
+    <li>/[дт]о[нм]/ - "дом", "том", "дон", "тон"</li>
+</ul>
+<h2>RegExp properties</h2>
+<ul>
+    <li>global(g) - позволяет найти все подстроки, которые соответствуют регулярному выражению. По умолчанию при поиске подстрок регулярное выражение выбирает первую попавшуюся подстроку из строки, которая соответствует выражению.</li>
+    <li>ignoreCase (i) - позволяет найти подстоки, которые соответствуют регулярному выражению, вне зависимости от регистра символов в строке.</li>
+    <li>multiLine (m) - позволяет найти подстроки, которые соответствуют регулярному выражению, в многострочном тексте.</li>
+</ul>
+<h4 style="color: green">Example</h4>
+<code><pre>var initialText = "привет Мир";
+var exp = /мир/; // var exp = /мир/i; Or var exp = /мир/ig;
+var result = exp.test(initialText); // false</pre></code>
 </body>
 </html>

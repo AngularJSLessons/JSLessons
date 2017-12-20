@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4.3 - RegExp in string methods</title>
+</head>
+<body>
+<h1>Lesson 4.3 - RegExp in string methods</h1>
+<h3>split</h3>
+<code>
+    <pre>
+var initialText = "Сегодня была прекрасная погода";
+var exp = /\s/;
+var result = initialText.split(exp);
+result.forEach(function(value, index, array){
+
+    document.write(value + "<br/>");
+})
+    </pre>
+</code>
+<h3>match</h3>
+<code>
+    <pre>
+
+var initialText = "Он пришел домой и сделал домашнюю работу";
+var exp = /дом[а-я]*/gi;
+var result = initialText.match(exp);
+result.forEach(function(value, index, array){
+
+    document.write(value + "<br/>");
+})
+    </pre>
+</code>
+<h3>search</h3>
+<code>
+    <pre>
+var initialText = "hello world";
+var exp = /wor/;
+var result = initialText.search(exp);
+document.write(result); // 6
+    </pre>
+</code>
+<h3>replace</h3>
+<code>
+    <pre>
+var menu = "Завтрак: каша, чай. Обед: суп, чай. Ужин: салат, чай.";
+var exp = /чай/gi;
+menu = menu.replace(exp, "кофе");
+document.write(menu);
+    </pre>
+</code>
+<h2>MetaSymbols</h2>
+<ul>
+    <li>\d: соответствует любой цифре от 0 до 9</li>
+    <li>\D: соответствует любому символу, который не является цифрой</li>
+    <li>\w: соответствует любой букве, цифре или символу подчеркивания (диапазоны A–Z, a–z, 0–9)</li>
+    <li>\W: соответствует любому символу, который не является буквой, цифрой или символом подчеркивания (то есть не находится в следующих диапазонах A–Z, a–z, 0–9)</li>
+    <li>\s: соответствует пробелу</li>
+    <li>\S: соответствует любому символу, который не является пробелом</li>
+    <li>.: соответствует любому символу</li>
+</ul>
+<h2>Modifications</h2>
+<ul>
+    <li><p><code>{n}</code>: соответствует n-ому количеству повторений предыдущего символа. Например, <code>h{3}</code> соответствует подстроке "hhh"</p></li>
+    <li><p><code>{n,}</code>: соответствует n и более количеству повторений предыдущего символа. Например, <code>h{3,}</code> соответствует подстрокам
+        "hhh", "hhhh", "hhhhh" и т.д.</p></li>
+    <li><p><code>{n,m}</code>: соответствует от n до m повторений предыдущего символа. Например, <code>h{2, 4}</code> соответствует подстрокам
+        "hh", "hhh", "hhhh".</p></li>
+    <li><p><code>?</code>: соответствует одному вхождению предыдущего символа в подстроку или его отсутствию в подстроке. Например, <code>/h?ome/</code> соответствует подстрокам
+        "home" и "ome".</p></li>
+    <li><p><code>+</code>: соответствует одному и более повторений предыдущего символа</p></li>
+    <li><p><code>*</code>: соответствует любому количеству повторений или отсутствию предыдущего символа</p></li>
+    <li><p><code>^</code>: соответствует началу строки. Например, <code>^h</code> соответствует строке "home", но не "ohma", так как h должен представлять начало строки</p></li>
+    <li><p><code>$</code>: соответствует концу строки. Например, <code>м$</code> соответствует строке "дом", так как строка должна оканчиваться на букву м</p></li>
+</ul>
+</body>
+</html>

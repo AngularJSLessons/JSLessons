@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5 - Browser Object Model and Window</title>
+</head>
+<body>
+<h1>Lesson 5 - Browser Object Model and Window</h1>
+<img src="Images/bom.png"/>
+<h3>window.open()</h3>
+<h4 style="color: green">Example</h4>
+<code>
+    <pre>
+var popup = window.open('https://microsoft.com', 'Microsoft', 'width=400, height=400, resizable=yes');
+
+function closeWindow(){
+    popup.close();
+}
+popup.moveTo(50,50);
+popup.resizeTo(500,350);
+setTimeout(closeWindow, 10000);
+    </pre>
+</code>
+<h3>history - Browser history</h3>
+<h4 style="color: green">Example</h4>
+<code>
+    <pre>
+history.length;
+history.back();
+history.forward();
+history.go(-3);
+history.go(3);
+    </pre>
+</code>
+<h3>location - web site info</h3>
+<h4>location properties</h4>
+<ul>
+    <li><p><span class="bb">href</span>: полная строка запроса к ресурсу</p></li>
+    <li><p><span class="bb">pathname</span>: путь к ресурсу</p></li>
+    <li><p><span class="bb">origin</span>: общая схема запроса</p></li>
+    <li><p><span class="bb">protocol</span>: протокол</p></li>
+    <li><p><span class="bb">port</span>: порт, используемый ресурсом</p></li>
+    <li><p><span class="bb">host</span>: хост</p></li>
+    <li><p><span class="bb">hostname</span>: название хоста</p></li>
+    <li><p><span class="bb">hash</span>: если строка запроса содержит символ решетки (#), то данное свойство возвращает ту часть строки, которая идет после этого символа</p></li>
+    <li><p><span class="bb">search</span>: если строка запроса содержит знак вопроса (?), например,  то данное свойство возвращает ту часть строки, которая идет после знака вопроса</p></li>
+</ul>
+<h4>location functions</h4>
+<ul>
+    <li><p><span class="bb">assign(url)</span>: загружает ресурс, который находится по пути url</p></li>
+    <li><p><span class="bb">reload(forcedReload)</span>: перезагружает текущую веб-страницу. Параметр forcedReload указывает, надо ли использовать кэш
+        браузера. Если параметр равен true, то кэш не используется</p></li>
+    <li><p><span class="bb">replace(url)</span>: заменяет текущую веб-станицу другим ресурсом, который находится по пути url. В отличие от метода
+        assign, который также загружает веб-станицу с другого ресурса, метод replace не сохраняет предыдущую веб-страницу в стеке истории переходов
+        history, поэтому мы не сможем вызвать метод history.back() для перехода к ней.</p></li>
+</ul>
+<h3>navigator - browser info</h3>
+<h4 style="color: green">Example</h4>
+<code>
+    <pre>
+var browser, uAgent = navigator.userAgent;
+
+if(uAgent.indexOf("Chrome") > -1) {
+    browser = "Google Chrome";
+} else if (uAgent.indexOf("Safari") > -1) {
+    browser = "Apple Safari";
+} else if (uAgent.indexOf("Opera") > -1) {
+    browser = "Opera";
+} else if (uAgent.indexOf("Firefox") > -1) {
+    browser = "Mozilla Firefox";
+} else if (uAgent.indexOf("MSIE") > -1) {
+    browser = "Microsoft Internet Explorer";
+}
+document.write(browser);
+    </pre>
+</code>
+<h3>geolocation - user location</h3>
+<h4>properties</h4>
+<ul>
+    <li><p><code>latitude</code>: географическая широта</p></li>
+    <li><p><code>longitude</code>: географическая долгота</p></li>
+    <li><p><code>altitude</code>: высота</p></li>
+    <li><p><code>speed</code>: скорость, с которой перемещается пользователь (например, если он идет или перемещается на транспорте)</p></li>
+</ul>
+<h3><a href="https://metanit.com/web/javascript/7.6.php">Timers</a></h3>
+</body>
+</html>

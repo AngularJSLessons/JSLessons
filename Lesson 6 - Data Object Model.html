@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 6 - Data Object Model</title>
+</head>
+<body>
+<h1>Lesson 6 - Data Object Model</h1>
+<img src="Images/domtree.png"/>
+<h3>Node Types</h3>
+<ul>
+    <li><p><span class="bb">Element</span>: html-элемент</p></li>
+    <li><p><span class="bb">Attr</span>: атрибут html-элемента</p></li>
+    <li><p><span class="bb">Document</span>: корневой узел html-документа</p></li>
+    <li><p><span class="bb">DocumentType</span>: DTD или тип схемы XML-документа</p></li>
+    <li><p><span class="bb">DocumentFragment</span>: место для временного хранения частей документа</p></li>
+    <li><p><span class="bb">EntityReference</span>: ссылка на сущность XML-документа</p></li>
+    <li><p><span class="bb">ProcessingInstruction</span>: инструкция обработки веб-страницы</p></li>
+    <li><p><span class="bb">Comment</span>: элемент комментария</p></li>
+    <li><p><span class="bb">Text</span>: текст элемента</p></li>
+    <li><p><span class="bb">CDATASection</span>: секция CDATA в документе XML</p></li>
+    <li><p><span class="bb">Entity</span>: необработанная сущность DTD</p></li>
+    <li><p><span class="bb">Notation</span>: нотация, объявленная в DTD</p></li>
+</ul>
+<h3>Search Elements</h3>
+<ul>
+    <li><p><span class="bb">getElementById(value)</span>: выбирает элемент, у которого атрибут <code>id</code> равен value</p></li>
+    <li><p><span class="bb">getElementsByTagName(value)</span>: выбирает все элементы, у которых тег равен value</p></li>
+    <li><p><span class="bb">getElementsByClassName(value)</span>: выбирает все элементы, которые имеют класс value</p></li>
+    <li><p><span class="bb">querySelector(value)</span>: выбирает первый элемент, который соответствует css-селектору value</p></li>
+    <li><p><span class="bb">querySelectorAll(value)</span>: выбирает все элементы, которые соответствуют css-селектору value</p></li>
+</ul>
+<h3>document properties</h3>
+<ul>
+    <li><p><span class="bb">documentElement</span>: предоставляет доступ к корневому элементу <code>&lt;html&gt;</code></p></li>
+    <li><p><span class="bb">body</span>: предоставляет доступ к элементу <code>&lt;body&gt;</code> на веб-странице</p></li>
+    <li><p><span class="bb">images</span>: содержит коллекцию всех объектов изображений (элементов img)</p></li>
+    <li><p><span class="bb">links</span>: содержит коллекцию ссылок - элементов <code>&lt;a&gt;</code> и <code>&lt;area&gt;</code>,
+        у которых определен атрибут <code>href</code></p></li>
+    <li><p><span class="bb">anchors</span>: предоставляет доступ к коллекции элементов <code>&lt;a&gt;</code>, у которых определен
+        атрибут <code>name</code></p></li>
+    <li><p><span class="bb">forms</span>: содержит коллекцию всех форм на веб-странице</p></li>
+</ul>
+<ul>
+    <li><p><span class="bb">createElement(elementName)</span>: создает элемент html, тег которого передается в качестве параметра. Возвращает созданный элемент</p></li>
+    <li><p><span class="bb">createTextNode(text)</span>: создает и возвращает текстовый узел. В качестве параметра передается текст узла.</p></li>
+</ul>
+<h3>Node Properties</h3>
+<ul>
+    <li><p><span class="bb">childNodes</span>: содержит коллекцию дочерних узлов</p></li>
+    <li><p><span class="bb">firstChild</span>: возвращает первый дочерний узел текущего узла</p></li>
+    <li><p><span class="bb">lastChild</span>: возвращает последний дочерний узел текущего узла</p></li>
+    <li><p><span class="bb">previousSibling</span>: возвращает предыдущий элемент, который находится на одном уровне с текущим</p></li>
+    <li><p><span class="bb">nextSibling</span>: возвращает следующий элемент, который находится на одном уровне с текущим</p></li>
+    <li><p><span class="bb">ownerDocument</span>: возвращает корневой узел документа</p></li>
+    <li><p><span class="bb">parentNode</span>: возвращает элемент, который содержит текущий узел</p></li>
+    <li><p><span class="bb">nodeName</span>: возвращает имя узла</p></li>
+    <li><p><span class="bb">nodeType</span>: возвращает тип узла в виде числа</p></li>
+    <li><p><span class="bb">nodeValue</span>: возвращает или устанавливает значение узла в виде простого текста</p></li>
+</ul>
+<ul>
+    <li><p><span class="bb">appendChild(newNode)</span>: добавляет новый узел newNode в конец коллекции дочерних узлов</p></li>
+    <li><p><span class="bb">insertBefore(newNode, referenceNode)</span>:  добавляет новый узел newNode перед узлом referenceNode</p></li>
+    <li><a href="https://metanit.com/web/javascript/8.5.php">More  ...</a></li>
+</ul>
+</body>
+</html>
